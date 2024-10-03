@@ -150,6 +150,10 @@ Before setting up Firebase Authentication, make sure you have the following inst
      ```bash
      http://localhost:4000
      ```
+   - Below is a screenshot of the Firebase Emulator Suite:
+
+     ![image](https://github.com/user-attachments/assets/107f71a6-05d0-407a-8182-39760ff78668)
+
 
 ## Running the Project
 
