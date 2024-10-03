@@ -2,6 +2,7 @@ package com.leomarkpaway.firebase_authentication
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.leomarkpaway.firebase_authentication.databinding.ActivityMainBinding
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        auth = FirebaseAuth.getInstance()
+        auth = MyApp.auth
 
         if (auth.currentUser == null) {
             startActivity(Intent(this, RegisterActivity::class.java))
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         binding.userDetails.text = updateData()
+        val uid = auth.currentUser?.uid
+        Log.d("qwe", "uid $uid")
     }
 
     private fun updateData(): String {
